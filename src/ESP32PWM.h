@@ -97,8 +97,16 @@ public:
 		return pin;
 	}
 	static bool hasPwm(int pin) {
+<<<<<<< Updated upstream
 #if defined(CONFIG_IDF_TARGET_ESP32S2)
 		if ((pin >=1 && pin <= 21) || //21
+=======
+#if defined(CONFIG_IDF_TARGET_ESP32S3)
+		if ((pin >= 0 && pin <=21) ||
+				(pin >= 26 && pin <= 48))
+#elif defined(ARDUINO_ESP32S2_DEV)
+		if ((pin >=1 && pin <= 21) || //20
+>>>>>>> Stashed changes
 				(pin == 26) || //1
 				(pin >= 33 && pin <= 42)) //10
 #elif defined(CONFIG_IDF_TARGET_ESP32S3)
